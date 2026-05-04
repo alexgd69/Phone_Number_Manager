@@ -1,58 +1,22 @@
 [
   {
-    "phone": "0612345678",
-    "name": "Alexis"
+    "nb": "0412578440",
+    "name": "Alice"
   },
   {
-    "phone": "0698765432",
-    "name": "Axel"
+    "nb": "0412199803",
+    "name": "Bob"
   },
   {
-    "phone": "0712345678",
-    "name": "Moussa"
+    "nb": "0468892011",
+    "name": "patate"
   },
   {
-    "phone": "0687654321",
-    "name": "Rayane"
+    "nb": "112",
+    "name": "patate"
   },
   {
-    "phone": "15",
+    "nb": "15",
     "name": "SAMU"
-  },
-  {
-    "phone": "17",
-    "name": "Police"
-  },
-  {
-    "phone": "18",
-    "name": "Pompiers"
-  },
-  {
-    "phone": "112",
-    "name": "Urgences Europeennes"
-  },
-  {
-    "phone": "116117",
-    "name": "Medecin de Garde"
-  },
-  {
-    "phone": "119",
-    "name": "Enfance en Danger"
-  },
-  {
-    "phone": "191",
-    "name": "Secours Aeronautique"
-  },
-  {
-    "phone": "196",
-    "name": "Secours Maritime"
-  },
-  {
-    "phone": "197",
-    "name": "Alerte Attentat"
-  },
-  {
-    "phone": "3114",
-    "name": "Prevention Suicide"
   }
 ]

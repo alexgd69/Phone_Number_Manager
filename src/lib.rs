@@ -41,7 +41,7 @@ impl Trie {
 #[derive(Deserialize)]
 pub struct User {
     pub name: String,
-    pub phone: String,
+    pub nb: String,
 }
 
 pub fn load_users(filepath: &str) -> Result<Vec<User>, Box<dyn Error>> {
@@ -101,7 +101,7 @@ pub fn run(config: Config) -> Result<(), Box<dyn Error>> {
 
     let mut trie = Trie::new();
     for user in &users {
-        trie.insert(&user.phone, &user.name);
+        trie.insert(&user.nb, &user.name);
     }
 
     let puml = generate_plantuml(&trie);
