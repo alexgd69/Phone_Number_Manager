@@ -41,9 +41,9 @@ Récupérer les mises à jour:
 
 git pull
 
-Lancer le projet:
+Lancer le projet :
 
-cargo run 
+cargo run
 
 Ajouter vos modifications:
 
