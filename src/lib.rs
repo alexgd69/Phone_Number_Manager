@@ -4,12 +4,15 @@ use std::collections::HashMap;
 use std::error::Error;
 use std::fs;
 
+use serde::Deserialize;
+
 // ─── Structure du Trie ───────────────────────────────────────────
 
 #[derive(Default)]
 pub struct TrieNode {
     pub children: HashMap<char, TrieNode>,
     pub is_end: bool,
+    pub name: Option<String>,
 }
 
 pub struct Trie {
@@ -23,18 +26,17 @@ impl Trie {
         }
     }
 
-    pub fn insert(&mut self, number: &str) {
+    pub fn insert(&mut self, number: &str, name: &str) {
         let mut node = &mut self.root;
         for ch in number.chars() {
             node = node.children.entry(ch).or_insert_with(TrieNode::default);
         }
         node.is_end = true;
+        node.name = Some(name.to_string());
     }
 }
 
 // ─── Désérialisation JSON ────────────────────────────────────────
-
-use serde::Deserialize;
 
 #[derive(Deserialize)]
 pub struct User {
@@ -64,7 +66,11 @@ fn traverse_node(node: &TrieNode, depth: usize, output: &mut String) {
         let stars = "*".repeat(depth + 1);
         let child = &node.children[&key];
         let label = if child.is_end {
-            format!("{} {} (end)", stars, key)
+            if let Some(name) = &child.name {
+                format!("{} {} ({})", stars, key, name)
+            } else {
+                format!("{} {} (end)", stars, key)
+            }
         } else {
             format!("{} {}", stars, key)
         };
@@ -74,7 +80,7 @@ fn traverse_node(node: &TrieNode, depth: usize, output: &mut String) {
     }
 }
 
-// ─── Config (structure inspirée du tutoriel ch12) ────────────────
+// ─── Config ──────────────────────────────────────────────────────
 
 pub struct Config {
     pub input_path: String,
@@ -82,7 +88,7 @@ pub struct Config {
 }
 
 impl Config {
-    pub fn new(args: &[String]) -> Result<Config, &'static str> {
+    pub fn new(_args: &[String]) -> Result<Config, &'static str> {
         Ok(Config {
             input_path: String::from("data/04_common_parts.json"),
             output_path: String::from("graph/04_common_parts.puml"),
@@ -95,7 +101,7 @@ pub fn run(config: Config) -> Result<(), Box<dyn Error>> {
 
     let mut trie = Trie::new();
     for user in &users {
-        trie.insert(&user.phone);
+        trie.insert(&user.phone, &user.name);
     }
 
     let puml = generate_plantuml(&trie);
