@@ -43,7 +43,7 @@ git pull
 
 Lancer le projet:
 
-cargo run --release
+cargo run 
 
 Ajouter vos modifications:
 
