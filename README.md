@@ -42,3 +42,5 @@ docker run -d -p 8080:8080 plantuml/plantuml-server:jetty
 
 4\. Copier-coller le contenu de `graph/04\_common\_parts.puml`
 
+test axel
+
