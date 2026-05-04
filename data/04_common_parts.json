@@ -1,19 +1,19 @@
 [
   {
     "phone": "0612345678",
-    "name": "Alice"
+    "name": "Alexis"
   },
   {
     "phone": "0698765432",
-    "name": "Bob"
+    "name": "Axel"
   },
   {
     "phone": "0712345678",
-    "name": "Charlie"
+    "name": "Moussa"
   },
   {
     "phone": "0687654321",
-    "name": "Diana"
+    "name": "Rayane"
   },
   {
     "phone": "15",
@@ -30,10 +30,6 @@
   {
     "phone": "112",
     "name": "Urgences Europeennes"
-  },
-  {
-    "phone": "115",
-    "name": "SDF - Sans Abri"
   },
   {
     "phone": "116117",
