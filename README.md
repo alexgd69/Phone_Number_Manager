@@ -3,6 +3,11 @@ Phone Number Manager
 Dépôt du projet :  
 https://github.com/alexgd69/Phone_Number_Manager
 
+Contributors :
+Alexis Brun : alexgd69
+Axel Laïb : codeaxel69
+Moussa Kone : btlsharif
+Rayane Derrag 
 
 Description
 
