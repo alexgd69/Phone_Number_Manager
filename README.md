@@ -56,3 +56,5 @@ Ajouter vos modifications:
 git add .
 git commit -m "feat: update project"
 git push
+
+Aide avec Claude.ai
